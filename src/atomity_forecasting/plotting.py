@@ -115,7 +115,7 @@ def plot_segments(segment: pd.DataFrame, dimensions: list[str]) -> Figure:
                                  (axes[row, 1], "vm_count", "VM count")):
             ax.bar(group.segment, group[metric], label="Training population")
             ax.set(ylabel=unit, title=f"{column}: {unit}")
-            ax.tick_params(axis="x", rotation=25)
+            ax.tick_params(axis="x", rotation=0)
     return fig
 
 

@@ -33,7 +33,7 @@ The notebook constructs targets, freezes selection, generates training-only anal
 | Reviewer smoke data | Three-VM CLI test with configurable training size and horizon |
 | Packaging | Required-file checks, ZIP integrity checks, and exclusions tested |
 
-The current suite passes **152 tests** (workspace: 8.85s). Before the four additional reviewer-smoke tests, fresh extracted-archive reproduction passed 148 tests in 6.79s. The notebook executes all **22 code cells** and generates **12 figures** without errors. Tests cover numerical correctness, leakage, executable chart definitions, typography, nonoverlapping layouts, and size-independent CLI execution. The PDF embeds Times New Roman regular/bold and uses justified body text.
+The current suite passes **153 tests** (workspace: 8.32s), including a check that segment bucket labels remain horizontal. Before the four additional reviewer-smoke tests, fresh extracted-archive reproduction passed 148 tests in 6.79s. The notebook executes all **22 code cells** and generates **12 figures** without errors. Tests cover numerical correctness, leakage, executable chart definitions, typography, nonoverlapping layouts, and size-independent CLI execution. The PDF embeds Times New Roman regular/bold and uses justified body text.
 
 ## Clean GitHub Checkout And Reviewer Smoke Inputs
 

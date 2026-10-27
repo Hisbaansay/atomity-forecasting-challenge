@@ -72,3 +72,16 @@ def test_reexport_does_not_duplicate_shared_legend(tmp_path):
     save_figure(fig, tmp_path / "second.png")
     assert len(fig.legends) == 1
     assert len(fig.legends[0].get_texts()) == 1
+
+
+def test_segment_bucket_labels_are_horizontal():
+    import pandas as pd
+
+    segment = pd.DataFrame({"dimension": ["virtual_core_bucket"] * 5,
+                            "segment": ["2", "24", "4", "8", ">24"],
+                            "mean_cpu_pct": [10, 11, 8, 9, 7],
+                            "vm_count": [100, 2, 30, 12, 1]})
+    fig = PLOTTERS["segments"](segment, ["virtual_core_bucket"])
+    for ax in fig.axes:
+        assert all(label.get_rotation() == 0 for label in ax.get_xticklabels())
+    plt.close(fig)
