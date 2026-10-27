@@ -1,0 +1,25 @@
+*.egg-info/
+.venv/
+.pytest_cache/
+__pycache__/
+.official/
+challenge_data/*.csv.gz
+*.tar.gz
+.DS_Store
+.ipynb_checkpoints/
+dist/
+
+# Local editor, interview preparation, and historical audit material.
+.vscode/
+docs/
+reports/revision_record.md
+reports/results/revision_integrity.json
+scripts/verify_revision.py
+
+# Archives and local credentials are never part of the GitHub submission.
+*.zip
+.env
+.env.*
+!.env.example
+*.pem
+*.key

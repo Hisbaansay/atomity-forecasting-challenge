@@ -1,0 +1,9 @@
+metric,count
+raw_rows,1340000
+clean_rows,1340000
+duplicate_key_rows,0
+invalid_cpu_or_id_rows,0
+invalid_cpu_range_rows,0
+invalid_min_mean_max_rows,0
+vms_missing_metadata,0
+metadata_without_readings,0

@@ -1,0 +1,17 @@
+table,column,missing_rows,total_rows
+cpu_raw,timestamp,0,1340000
+cpu_raw,vm_id,0,1340000
+cpu_raw,min_cpu,0,1340000
+cpu_raw,max_cpu,0,1340000
+cpu_raw,avg_cpu,0,1340000
+metadata,vm_id,0,10000
+metadata,subscription_id,0,10000
+metadata,deployment_id,0,10000
+metadata,timestamp_vm_created,0,10000
+metadata,timestamp_vm_deleted,0,10000
+metadata,max_cpu,0,10000
+metadata,avg_cpu,0,10000
+metadata,p95_max_cpu,0,10000
+metadata,vm_category,0,10000
+metadata,virtual_core_bucket,0,10000
+metadata,memory_gb_bucket,0,10000

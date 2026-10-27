@@ -1,0 +1,41 @@
+{
+  "isolated_source_copy": true,
+  "submission_archive_extracted": true,
+  "fresh_environment": true,
+  "data_copied_from_verified_release": true,
+  "steps": [
+    {
+      "stage": "create environment",
+      "passed": true
+    },
+    {
+      "stage": "install",
+      "passed": true
+    },
+    {
+      "stage": "predict",
+      "passed": true
+    },
+    {
+      "stage": "analysis",
+      "passed": true
+    },
+    {
+      "stage": "render PDF",
+      "passed": true
+    },
+    {
+      "stage": "tests",
+      "passed": true
+    },
+    {
+      "stage": "execute notebook",
+      "passed": true
+    }
+  ],
+  "pdf_result": "Rendered /private/var/folders/w2/hjm11fyn49gb8cc5hn5r_wrr0000gn/T/atomity-clean-review-goexx7f8/atomity-forecasting-challenge/reports/final_report.pdf: 6 core pages + 6 appendix pages = 12 total pages",
+  "test_result": "........................................................................ [ 48%]\n........................................................................ [ 97%]\n....                                                                     [100%]\n148 passed in 6.79s",
+  "notebook_result": "Synchronized 12 executable plotting cells\nExecuted 22 code cells without errors",
+  "predictions_byte_identical": true,
+  "prediction_sha256": "e224a7d8e711b4d7d47da25f0bcb1a52e24ff8eb04f76b39b321d0ce04c9da5f"
+}

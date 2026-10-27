@@ -1,0 +1,876 @@
+{
+  "scope": {
+    "eda_timestamps": 110,
+    "holdout_timestamps": 24,
+    "holdout_scored": false,
+    "selection_frozen_before_analysis": true,
+    "training_start": 0,
+    "training_end": 32700
+  },
+  "units": {
+    "cpu": "percent",
+    "cpu_error": "percentage points",
+    "time": "trace-relative seconds",
+    "count": "VMs"
+  },
+  "metadata_roles": {
+    "segments": [
+      "vm_category",
+      "virtual_core_bucket",
+      "memory_gb_bucket"
+    ],
+    "core_memory": "categorical labels only, not numerical capacities",
+    "creation": "timestamp_vm_created",
+    "deletion": "timestamp_vm_deleted",
+    "source_cpu_columns": [
+      "max_cpu",
+      "avg_cpu",
+      "p95_max_cpu"
+    ]
+  },
+  "training_cpu": {
+    "n": 1100000,
+    "min": 0.0071589216268651,
+    "max": 99.48802665399457,
+    "mean": 9.41408901953901,
+    "median": 5.119809152561594,
+    "std_ddof1": 14.275209808269965,
+    "p10": 1.2348014199087254,
+    "p25": 2.486945395240028,
+    "p75": 9.647973827501037,
+    "p90": 19.691118594608653,
+    "p95": 37.293248468366095,
+    "p99": 87.40634736453235,
+    "share_avg_ge80": 0.012720909090909092,
+    "share_avg_ge95": 0.005662727272727272,
+    "vm_mean_distribution": {
+      "n": 10000,
+      "min": 0.007344645690252164,
+      "max": 99.27295079736295,
+      "mean": 9.41408901953901,
+      "median": 5.501660014912842,
+      "std_ddof1": 13.051504118453655,
+      "p10": 1.3919084684198209,
+      "p25": 2.86932679968534,
+      "p75": 9.972827143993896,
+      "p90": 19.73986062906528,
+      "p95": 33.625714676811214,
+      "p99": 79.62300099428235
+    }
+  },
+  "training_aggregate": {
+    "n": 110,
+    "min": 9.111633601754887,
+    "max": 9.912175173984913,
+    "mean": 9.41408901953901,
+    "median": 9.378120946203444,
+    "std_ddof1": 0.19356833547362817,
+    "p10": 9.179197770908909,
+    "p25": 9.288952109938585,
+    "p75": 9.507673290365222,
+    "p90": 9.668361517488389,
+    "p95": 9.829146464857047,
+    "p99": 9.90490995485201
+  },
+  "peak_time": {
+    "timestamp": 16500.0,
+    "active_vm_count": 10000.0,
+    "aggregate_cpu_utilization": 9.912175173984913
+  },
+  "low_time": {
+    "timestamp": 32400.0,
+    "active_vm_count": 10000.0,
+    "aggregate_cpu_utilization": 9.111633601754887
+  },
+  "volatility": {
+    "aggregate_std_pp": 0.19356833547362817,
+    "difference_std_pp": 0.15803270128414515,
+    "max_absolute_delta_pp": 0.4368314267409783,
+    "lag1_autocorrelation": 0.6672358236125624
+  },
+  "autocorrelation_note": "Descriptive Pearson correlations at lags 1..12; no significance or seasonality claim.",
+  "segments": [
+    {
+      "dimension": "vm_category",
+      "segment": "Delay-insensitive",
+      "vm_count": 6180,
+      "mean_cpu_pct": 8.257265890248375,
+      "share_readings_ge80": 0.008923212709620477,
+      "share_readings_ge95": 0.004240953221535746,
+      "share_vm_mean_ge80": 0.006148867313915857
+    },
+    {
+      "dimension": "vm_category",
+      "segment": "Interactive",
+      "vm_count": 3091,
+      "mean_cpu_pct": 11.505149960490012,
+      "share_readings_ge80": 0.01912002588159172,
+      "share_readings_ge95": 0.007767418605335137,
+      "share_vm_mean_ge80": 0.015205435134260757
+    },
+    {
+      "dimension": "vm_category",
+      "segment": "Unknown",
+      "vm_count": 729,
+      "mean_cpu_pct": 10.35468925347121,
+      "share_readings_ge80": 0.01778276593091408,
+      "share_readings_ge95": 0.008791619902731014,
+      "share_vm_mean_ge80": 0.019204389574759947
+    },
+    {
+      "dimension": "virtual_core_bucket",
+      "segment": "2",
+      "vm_count": 7534,
+      "mean_cpu_pct": 9.764162833337474,
+      "share_readings_ge80": 0.0145244588169993,
+      "share_readings_ge95": 0.006379564157636895,
+      "share_vm_mean_ge80": 0.011414919033713831
+    },
+    {
+      "dimension": "virtual_core_bucket",
+      "segment": "24",
+      "vm_count": 62,
+      "mean_cpu_pct": 11.428830856129748,
+      "share_readings_ge80": 0.0,
+      "share_readings_ge95": 0.0,
+      "share_vm_mean_ge80": 0.0
+    },
+    {
+      "dimension": "virtual_core_bucket",
+      "segment": "4",
+      "vm_count": 1908,
+      "mean_cpu_pct": 7.918722878217822,
+      "share_readings_ge80": 0.008900323994663619,
+      "share_readings_ge95": 0.004373927958833619,
+      "share_vm_mean_ge80": 0.006813417190775681
+    },
+    {
+      "dimension": "virtual_core_bucket",
+      "segment": "8",
+      "vm_count": 486,
+      "mean_cpu_pct": 9.658399081248433,
+      "share_readings_ge80": 0.001646090534979424,
+      "share_readings_ge95": 0.00044893378226711555,
+      "share_vm_mean_ge80": 0.0
+    },
+    {
+      "dimension": "virtual_core_bucket",
+      "segment": ">24",
+      "vm_count": 10,
+      "mean_cpu_pct": 6.619469081917167,
+      "share_readings_ge80": 0.0,
+      "share_readings_ge95": 0.0,
+      "share_vm_mean_ge80": 0.0
+    },
+    {
+      "dimension": "memory_gb_bucket",
+      "segment": "2",
+      "vm_count": 3904,
+      "mean_cpu_pct": 8.802253921344631,
+      "share_readings_ge80": 0.006038096125186288,
+      "share_readings_ge95": 0.0030970566318926974,
+      "share_vm_mean_ge80": 0.005122950819672131
+    },
+    {
+      "dimension": "memory_gb_bucket",
+      "segment": "32",
+      "vm_count": 1383,
+      "mean_cpu_pct": 7.814017174669404,
+      "share_readings_ge80": 0.002123184118845724,
+      "share_readings_ge95": 0.00023663971603234076,
+      "share_vm_mean_ge80": 0.0021691973969631237
+    },
+    {
+      "dimension": "memory_gb_bucket",
+      "segment": "4",
+      "vm_count": 2475,
+      "mean_cpu_pct": 11.459541216235,
+      "share_readings_ge80": 0.03266483011937557,
+      "share_readings_ge95": 0.013458218549127638,
+      "share_vm_mean_ge80": 0.025050505050505052
+    },
+    {
+      "dimension": "memory_gb_bucket",
+      "segment": "64",
+      "vm_count": 82,
+      "mean_cpu_pct": 11.217160055534702,
+      "share_readings_ge80": 0.0006651884700665188,
+      "share_readings_ge95": 0.0,
+      "share_vm_mean_ge80": 0.0
+    },
+    {
+      "dimension": "memory_gb_bucket",
+      "segment": "8",
+      "vm_count": 2146,
+      "mean_cpu_pct": 9.143401122245216,
+      "share_readings_ge80": 0.009226467847157502,
+      "share_readings_ge95": 0.005079217148182665,
+      "share_vm_mean_ge80": 0.0065237651444548
+    },
+    {
+      "dimension": "memory_gb_bucket",
+      "segment": ">64",
+      "vm_count": 10,
+      "mean_cpu_pct": 6.619469081917167,
+      "share_readings_ge80": 0.0,
+      "share_readings_ge95": 0.0,
+      "share_vm_mean_ge80": 0.0
+    }
+  ],
+  "selected_validation": {
+    "error_convention": "prediction minus actual; CPU errors are percentage points",
+    "pooled_validation_rows": 72,
+    "unique_validation_timestamps": 60,
+    "overlap_note": "Origins overlap; pooled empirical errors are not independent or calibrated prediction intervals.",
+    "underprediction_definition": "max(actual - prediction, 0), including zero for overpredictions",
+    "underprediction_q90_pp": 0.3749294849531715,
+    "underprediction_q95_pp": 0.42116067217222297,
+    "underprediction_max_pp": 0.4858214269332599,
+    "first6_MAE_pp": 0.1805857204248452,
+    "last6_MAE_pp": 0.24906191646260142,
+    "peak_rule": "actual >= q90 of aggregate CPU in that origin's fitting prefix",
+    "per_origin": [
+      {
+        "target": "active_vm_count",
+        "model": "persistence",
+        "origin": 50,
+        "MAE": 0.0,
+        "RMSE": 0.0,
+        "bias": 0.0,
+        "max_absolute_error": 0.0,
+        "max_overprediction": 0.0,
+        "max_underprediction": -0.0,
+        "peak_threshold": 10000.0,
+        "peak_n": 24,
+        "peak_MAE": 0.0,
+        "peak_bias": 0.0,
+        "first6_MAE": 0.0,
+        "last6_MAE": 0.0
+      },
+      {
+        "target": "active_vm_count",
+        "model": "persistence",
+        "origin": 70,
+        "MAE": 0.0,
+        "RMSE": 0.0,
+        "bias": 0.0,
+        "max_absolute_error": 0.0,
+        "max_overprediction": 0.0,
+        "max_underprediction": -0.0,
+        "peak_threshold": 10000.0,
+        "peak_n": 24,
+        "peak_MAE": 0.0,
+        "peak_bias": 0.0,
+        "first6_MAE": 0.0,
+        "last6_MAE": 0.0
+      },
+      {
+        "target": "active_vm_count",
+        "model": "persistence",
+        "origin": 86,
+        "MAE": 0.0,
+        "RMSE": 0.0,
+        "bias": 0.0,
+        "max_absolute_error": 0.0,
+        "max_overprediction": 0.0,
+        "max_underprediction": -0.0,
+        "peak_threshold": 10000.0,
+        "peak_n": 24,
+        "peak_MAE": 0.0,
+        "peak_bias": 0.0,
+        "first6_MAE": 0.0,
+        "last6_MAE": 0.0
+      },
+      {
+        "target": "aggregate_cpu_utilization",
+        "model": "persistence",
+        "origin": 50,
+        "MAE": 0.2680911087888789,
+        "RMSE": 0.30278521068487374,
+        "bias": -0.2467351234392893,
+        "max_absolute_error": 0.4858214269332599,
+        "max_overprediction": 0.17298305426548133,
+        "max_underprediction": 0.4858214269332599,
+        "peak_threshold": 9.520164050791907,
+        "peak_n": 20,
+        "peak_MAE": 0.3061925476135931,
+        "peak_bias": -0.3061925476135931,
+        "first6_MAE": 0.20201442823243307,
+        "last6_MAE": 0.18397877558880302
+      },
+      {
+        "target": "aggregate_cpu_utilization",
+        "model": "persistence",
+        "origin": 70,
+        "MAE": 0.30540846283822476,
+        "RMSE": 0.3328627112663394,
+        "bias": 0.30540846283822476,
+        "max_absolute_error": 0.5467717602266973,
+        "max_overprediction": 0.5467717602266973,
+        "max_underprediction": 0.0,
+        "peak_threshold": 9.803785163688111,
+        "peak_n": 0,
+        "peak_MAE": null,
+        "peak_bias": null,
+        "first6_MAE": 0.20240362899998576,
+        "last6_MAE": 0.38731989791715077
+      },
+      {
+        "target": "aggregate_cpu_utilization",
+        "model": "persistence",
+        "origin": 86,
+        "MAE": 0.13242942454439133,
+        "RMSE": 0.15422831245835628,
+        "bias": 0.11724843441208677,
+        "max_absolute_error": 0.25513717892279075,
+        "max_overprediction": 0.25513717892279075,
+        "max_underprediction": 0.07581471670360784,
+        "peak_threshold": 9.781485494026896,
+        "peak_n": 0,
+        "peak_MAE": null,
+        "peak_bias": null,
+        "first6_MAE": 0.13733910404211672,
+        "last6_MAE": 0.17588707588185049
+      }
+    ]
+  },
+  "workload_concentration": {
+    "scope": "CPU readings at explicitly supplied training timestamps only",
+    "vm_count": 10000,
+    "training_timestamp_count": 110,
+    "high_threshold_pct": 80,
+    "high_readings": 13993,
+    "vms_ever_high": 437,
+    "vms_high_at_least_half": 114,
+    "vms_training_mean_ge80": 99,
+    "top_group_fraction": 0.01,
+    "top_group_vm_count": 100,
+    "top_group_high_readings": 10021,
+    "top_group_share_of_high_readings": 0.7161437861788037,
+    "mean_vm_temporal_std_pp": 2.9725351384268426,
+    "top_group_note": "Retrospective count ranking; descriptive concentration, not incident prediction"
+  },
+  "cross_section": {
+    "reporting_count_min": 10000,
+    "reporting_count_max": 10000,
+    "workload_active_count_min": 2561,
+    "workload_active_count_max": 2951,
+    "workload_active_rule": "avg_cpu > 5 AND max_cpu > 20; illustrative, not the required target",
+    "bursty_std_threshold_pp": 6.184628621932353,
+    "classes": [
+      {
+        "class": "idle_low",
+        "classification": "exclusive_mean",
+        "vm_count": 4635,
+        "share_vms": 0.4635,
+        "mean_avg_cpu": 2.6340994267990996,
+        "mean_std_pp": 0.965936246135973,
+        "peak_avg_cpu": 95.30227067510477,
+        "peak_interval_max_cpu": 99.3176865471368
+      },
+      {
+        "class": "moderate",
+        "classification": "exclusive_mean",
+        "vm_count": 5145,
+        "share_vms": 0.5145,
+        "mean_avg_cpu": 12.755949984390968,
+        "mean_std_pp": 4.490180170489049,
+        "peak_avg_cpu": 99.14607460633692,
+        "peak_interval_max_cpu": 99.49311030499071
+      },
+      {
+        "class": "high",
+        "classification": "exclusive_mean",
+        "vm_count": 220,
+        "share_vms": 0.022,
+        "mean_avg_cpu": 74.102166738567,
+        "mean_std_pp": 9.755726846645626,
+        "peak_avg_cpu": 99.48802665399457,
+        "peak_interval_max_cpu": 99.70285977277616
+      },
+      {
+        "class": "hot_avg_gt80",
+        "classification": "nonexclusive_flags",
+        "vm_count": 437,
+        "share_vms": 0.0437,
+        "mean_avg_cpu": 43.231587316195395,
+        "mean_std_pp": 19.366496824850643,
+        "peak_avg_cpu": 99.48802665399457,
+        "peak_interval_max_cpu": 99.70285977277616
+      },
+      {
+        "class": "interval_max_gt80",
+        "classification": "nonexclusive_flags",
+        "vm_count": 2235,
+        "share_vms": 0.2235,
+        "mean_avg_cpu": 20.31712121508058,
+        "mean_std_pp": 8.34084410731735,
+        "peak_avg_cpu": 99.48802665399457,
+        "peak_interval_max_cpu": 99.70285977277616
+      },
+      {
+        "class": "bursty",
+        "classification": "nonexclusive_flags",
+        "vm_count": 1000,
+        "share_vms": 0.1,
+        "mean_avg_cpu": 26.242904612362413,
+        "mean_std_pp": 14.781122139151517,
+        "peak_avg_cpu": 99.23745708945208,
+        "peak_interval_max_cpu": 99.58110531860213
+      }
+    ]
+  },
+  "horizon_headroom": {
+    "residual": "max(actual - prediction, 0), original training backtests only",
+    "samples_per_horizon": 3,
+    "envelope": "cumulative maximum of raw per-horizon q90/q95; display heuristic",
+    "interpretation": "CPU reference, not absolute provisioned capacity or calibrated coverage",
+    "buffer_p95_first_pp": 0.04757683167897681,
+    "buffer_p95_last_pp": 0.43723928423993386
+  },
+  "segment_variability": [
+    {
+      "dimension": "vm_category",
+      "segment": "Delay-insensitive",
+      "vm_count": 6180,
+      "timestamps": 110,
+      "mean_cpu_pct": 8.257265890248373,
+      "segment_mean_temporal_std_pp": 0.2169814406709163,
+      "largest_absolute_change_pp": 0.39355387180255974,
+      "mean_vm_temporal_std_pp": 2.7972520993842185
+    },
+    {
+      "dimension": "vm_category",
+      "segment": "Interactive",
+      "vm_count": 3091,
+      "timestamps": 110,
+      "mean_cpu_pct": 11.505149960490014,
+      "segment_mean_temporal_std_pp": 0.2433488702463516,
+      "largest_absolute_change_pp": 0.7156722102401201,
+      "mean_vm_temporal_std_pp": 3.243585612021158
+    },
+    {
+      "dimension": "vm_category",
+      "segment": "Unknown",
+      "vm_count": 729,
+      "timestamps": 110,
+      "mean_cpu_pct": 10.354689253471212,
+      "segment_mean_temporal_std_pp": 0.6290173901517678,
+      "largest_absolute_change_pp": 0.8489433497962917,
+      "mean_vm_temporal_std_pp": 3.309204778212015
+    },
+    {
+      "dimension": "virtual_core_bucket",
+      "segment": "2",
+      "vm_count": 7534,
+      "timestamps": 110,
+      "mean_cpu_pct": 9.764162833337474,
+      "segment_mean_temporal_std_pp": 0.2437851605624166,
+      "largest_absolute_change_pp": 0.4649488446086636,
+      "mean_vm_temporal_std_pp": 3.196231326044269
+    },
+    {
+      "dimension": "virtual_core_bucket",
+      "segment": "24",
+      "vm_count": 62,
+      "timestamps": 110,
+      "mean_cpu_pct": 11.428830856129746,
+      "segment_mean_temporal_std_pp": 0.4091964203201205,
+      "largest_absolute_change_pp": 0.8175651182786492,
+      "mean_vm_temporal_std_pp": 1.4920102055677085
+    },
+    {
+      "dimension": "virtual_core_bucket",
+      "segment": "4",
+      "vm_count": 1908,
+      "timestamps": 110,
+      "mean_cpu_pct": 7.918722878217821,
+      "segment_mean_temporal_std_pp": 0.1856334816422688,
+      "largest_absolute_change_pp": 0.4223594648739697,
+      "mean_vm_temporal_std_pp": 2.247878307371657
+    },
+    {
+      "dimension": "virtual_core_bucket",
+      "segment": "8",
+      "vm_count": 486,
+      "timestamps": 110,
+      "mean_cpu_pct": 9.658399081248431,
+      "segment_mean_temporal_std_pp": 0.4207057906787874,
+      "largest_absolute_change_pp": 0.8642282484753618,
+      "mean_vm_temporal_std_pp": 2.5359441452210816
+    },
+    {
+      "dimension": "virtual_core_bucket",
+      "segment": ">24",
+      "vm_count": 10,
+      "timestamps": 110,
+      "mean_cpu_pct": 6.619469081917167,
+      "segment_mean_temporal_std_pp": 2.003294767449398,
+      "largest_absolute_change_pp": 10.493330529826657,
+      "mean_vm_temporal_std_pp": 3.101927606313673
+    },
+    {
+      "dimension": "memory_gb_bucket",
+      "segment": "2",
+      "vm_count": 3904,
+      "timestamps": 110,
+      "mean_cpu_pct": 8.802253921344631,
+      "segment_mean_temporal_std_pp": 0.22323627339656446,
+      "largest_absolute_change_pp": 0.6191312277104277,
+      "mean_vm_temporal_std_pp": 2.8093828735888198
+    },
+    {
+      "dimension": "memory_gb_bucket",
+      "segment": "32",
+      "vm_count": 1383,
+      "timestamps": 110,
+      "mean_cpu_pct": 7.814017174669403,
+      "segment_mean_temporal_std_pp": 0.2581015572461229,
+      "largest_absolute_change_pp": 0.5256582158223511,
+      "mean_vm_temporal_std_pp": 2.0498955958441183
+    },
+    {
+      "dimension": "memory_gb_bucket",
+      "segment": "4",
+      "vm_count": 2475,
+      "timestamps": 110,
+      "mean_cpu_pct": 11.459541216235,
+      "segment_mean_temporal_std_pp": 0.3530106981608093,
+      "largest_absolute_change_pp": 0.5896732545996475,
+      "mean_vm_temporal_std_pp": 4.153290782165851
+    },
+    {
+      "dimension": "memory_gb_bucket",
+      "segment": "64",
+      "vm_count": 82,
+      "timestamps": 110,
+      "mean_cpu_pct": 11.2171600555347,
+      "segment_mean_temporal_std_pp": 0.4805669178239197,
+      "largest_absolute_change_pp": 0.8021816614733623,
+      "mean_vm_temporal_std_pp": 2.104476403347469
+    },
+    {
+      "dimension": "memory_gb_bucket",
+      "segment": "8",
+      "vm_count": 2146,
+      "timestamps": 110,
+      "mean_cpu_pct": 9.143401122245214,
+      "segment_mean_temporal_std_pp": 0.2826682821791004,
+      "largest_absolute_change_pp": 0.9427790969088825,
+      "mean_vm_temporal_std_pp": 2.534731598195317
+    },
+    {
+      "dimension": "memory_gb_bucket",
+      "segment": ">64",
+      "vm_count": 10,
+      "timestamps": 110,
+      "mean_cpu_pct": 6.619469081917167,
+      "segment_mean_temporal_std_pp": 2.003294767449398,
+      "largest_absolute_change_pp": 10.493330529826657,
+      "mean_vm_temporal_std_pp": 3.101927606313673
+    }
+  ],
+  "change_diagnostics_note": "Retrospective validation labels using each fitting-prefix positive-change q90; no selection/policy update",
+  "selected_cpu_change_errors": [
+    {
+      "target": "aggregate_cpu_utilization",
+      "model": "persistence",
+      "scope": "pooled",
+      "origin": null,
+      "change_group": "large_upward_change",
+      "n": 2,
+      "MAE": 0.1653685409411496,
+      "mean_underprediction": 0.1156162927813229,
+      "underprediction_rate": 0.5,
+      "max_underprediction": 0.2312325855626458
+    },
+    {
+      "target": "aggregate_cpu_utilization",
+      "model": "persistence",
+      "scope": "pooled",
+      "origin": null,
+      "change_group": "smaller_upward_change",
+      "n": 26,
+      "MAE": 0.22630373135679965,
+      "mean_underprediction": 0.12431644478133187,
+      "underprediction_rate": 0.46153846153846156,
+      "max_underprediction": 0.4858214269332599
+    },
+    {
+      "target": "aggregate_cpu_utilization",
+      "model": "persistence",
+      "scope": "pooled",
+      "origin": null,
+      "change_group": "nonpositive_change",
+      "n": 44,
+      "MAE": 0.2438104957035634,
+      "mean_underprediction": 0.06583242087382724,
+      "underprediction_rate": 0.29545454545454547,
+      "max_underprediction": 0.42764383130715267
+    }
+  ],
+  "normalization": {
+    "definition": "MAE / mean of the complete 110-row training prefix",
+    "training_means": {
+      "active_vm_count": 10000.0,
+      "aggregate_cpu_utilization": 9.41408901953901
+    },
+    "role": "Post-hoc reporting scale, not a model input or selection criterion"
+  },
+  "sensitivity": {
+    "role": "Read-only diagnostics; final model and original schedule unchanged",
+    "preferred": [
+      {
+        "schedule": "original",
+        "origins": "50,70,86",
+        "target": "active_vm_count",
+        "model": "persistence",
+        "MAE": 0.0,
+        "RMSE": 0.0,
+        "bias": 0.0,
+        "peak_MAE": 0.0,
+        "relative_improvement": null,
+        "preferred": true,
+        "persistence_MAE": 0.0,
+        "training_mean": 10000.0,
+        "normalized_MAE": 0.0,
+        "normalized_MAE_pct": 0.0
+      },
+      {
+        "schedule": "original",
+        "origins": "50,70,86",
+        "target": "aggregate_cpu_utilization",
+        "model": "persistence",
+        "MAE": 0.23530966539049836,
+        "RMSE": 0.27462874377652347,
+        "bias": 0.05864059127034074,
+        "peak_MAE": 0.3061925476135931,
+        "relative_improvement": 0.0,
+        "preferred": true,
+        "persistence_MAE": 0.23530966539049836,
+        "training_mean": 9.41408901953901,
+        "normalized_MAE": 0.024995479106062358,
+        "normalized_MAE_pct": 2.499547910606236
+      },
+      {
+        "schedule": "alternative_a",
+        "origins": "38,62,86",
+        "target": "active_vm_count",
+        "model": "persistence",
+        "MAE": 0.0,
+        "RMSE": 0.0,
+        "bias": 0.0,
+        "peak_MAE": 0.0,
+        "relative_improvement": null,
+        "preferred": true,
+        "persistence_MAE": 0.0,
+        "training_mean": 10000.0,
+        "normalized_MAE": 0.0,
+        "normalized_MAE_pct": 0.0
+      },
+      {
+        "schedule": "alternative_a",
+        "origins": "38,62,86",
+        "target": "aggregate_cpu_utilization",
+        "model": "mean_12",
+        "MAE": 0.17838478834018526,
+        "RMSE": 0.23219697619536311,
+        "bias": 0.03726324970644414,
+        "peak_MAE": 0.28638768240012635,
+        "relative_improvement": 0.0,
+        "preferred": true,
+        "persistence_MAE": 0.2081979578310074,
+        "training_mean": 9.41408901953901,
+        "normalized_MAE": 0.018948704220870055,
+        "normalized_MAE_pct": 1.8948704220870054
+      },
+      {
+        "schedule": "alternative_b",
+        "origins": "30,54,78",
+        "target": "active_vm_count",
+        "model": "persistence",
+        "MAE": 0.0,
+        "RMSE": 0.0,
+        "bias": 0.0,
+        "peak_MAE": 0.0,
+        "relative_improvement": null,
+        "preferred": true,
+        "persistence_MAE": 0.0,
+        "training_mean": 10000.0,
+        "normalized_MAE": 0.0,
+        "normalized_MAE_pct": 0.0
+      },
+      {
+        "schedule": "alternative_b",
+        "origins": "30,54,78",
+        "target": "aggregate_cpu_utilization",
+        "model": "damped_trend",
+        "MAE": 0.13762531804194308,
+        "RMSE": 0.18079459034637055,
+        "bias": -0.08495165657764092,
+        "peak_MAE": 0.2520015521482728,
+        "relative_improvement": 0.1026339450916605,
+        "preferred": true,
+        "persistence_MAE": 0.1810391100542775,
+        "training_mean": 9.41408901953901,
+        "normalized_MAE": 0.014619079738496285,
+        "normalized_MAE_pct": 1.4619079738496286
+      }
+    ]
+  },
+  "selection": {
+    "train_size": 110,
+    "horizon": 24,
+    "origins": [
+      50,
+      70,
+      86
+    ],
+    "criterion": "pooled_backtest_MAE",
+    "targets": {
+      "active_vm_count": {
+        "model": "persistence",
+        "best_baseline": "persistence",
+        "metrics": {
+          "MAE": 0.0,
+          "RMSE": 0.0,
+          "bias": 0.0,
+          "peak_MAE": 0.0,
+          "relative_improvement": null
+        },
+        "candidates": [
+          {
+            "model": "persistence",
+            "MAE": 0.0,
+            "RMSE": 0.0,
+            "bias": 0.0,
+            "peak_MAE": 0.0,
+            "relative_improvement": null
+          },
+          {
+            "model": "mean_6",
+            "MAE": 0.0,
+            "RMSE": 0.0,
+            "bias": 0.0,
+            "peak_MAE": 0.0,
+            "relative_improvement": null
+          },
+          {
+            "model": "mean_12",
+            "MAE": 0.0,
+            "RMSE": 0.0,
+            "bias": 0.0,
+            "peak_MAE": 0.0,
+            "relative_improvement": null
+          },
+          {
+            "model": "mean_24",
+            "MAE": 0.0,
+            "RMSE": 0.0,
+            "bias": 0.0,
+            "peak_MAE": 0.0,
+            "relative_improvement": null
+          },
+          {
+            "model": "ses_0.2",
+            "MAE": 0.0,
+            "RMSE": 0.0,
+            "bias": 0.0,
+            "peak_MAE": 0.0,
+            "relative_improvement": null
+          },
+          {
+            "model": "ses_0.5",
+            "MAE": 0.0,
+            "RMSE": 0.0,
+            "bias": 0.0,
+            "peak_MAE": 0.0,
+            "relative_improvement": null
+          },
+          {
+            "model": "damped_trend",
+            "MAE": 0.0,
+            "RMSE": 0.0,
+            "bias": 0.0,
+            "peak_MAE": 0.0,
+            "relative_improvement": null
+          }
+        ]
+      },
+      "aggregate_cpu_utilization": {
+        "model": "persistence",
+        "best_baseline": "persistence",
+        "metrics": {
+          "MAE": 0.23530966539049836,
+          "RMSE": 0.27462874377652347,
+          "bias": 0.05864059127034074,
+          "peak_MAE": 0.3061925476135931,
+          "relative_improvement": 0.0
+        },
+        "candidates": [
+          {
+            "model": "persistence",
+            "MAE": 0.23530966539049836,
+            "RMSE": 0.27462874377652347,
+            "bias": 0.05864059127034074,
+            "peak_MAE": 0.3061925476135931,
+            "relative_improvement": 0.0
+          },
+          {
+            "model": "mean_6",
+            "MAE": 0.2714086367291566,
+            "RMSE": 0.31406353224586503,
+            "bias": 0.060483992408914694,
+            "peak_MAE": 0.3642130154827969,
+            "relative_improvement": -0.15341049114472924
+          },
+          {
+            "model": "mean_12",
+            "MAE": 0.28112601668092047,
+            "RMSE": 0.32991022906784834,
+            "bias": 0.06110857070123616,
+            "peak_MAE": 0.3734910721135522,
+            "relative_improvement": -0.1947066271773813
+          },
+          {
+            "model": "mean_24",
+            "MAE": 0.289179947573876,
+            "RMSE": 0.3186310871723707,
+            "bias": 0.07794026816237903,
+            "peak_MAE": 0.37104316907158735,
+            "relative_improvement": -0.22893357182748722
+          },
+          {
+            "model": "ses_0.2",
+            "MAE": 0.27659645777194597,
+            "RMSE": 0.320204546031341,
+            "bias": 0.06349341197528911,
+            "peak_MAE": 0.36753524110015884,
+            "relative_improvement": -0.17545727377127426
+          },
+          {
+            "model": "ses_0.5",
+            "MAE": 0.26491649772896964,
+            "RMSE": 0.3087513208626733,
+            "bias": 0.05917295378499819,
+            "peak_MAE": 0.35265653358032817,
+            "relative_improvement": -0.12582072346810955
+          },
+          {
+            "model": "damped_trend",
+            "MAE": 0.2632738638122221,
+            "RMSE": 0.31169588406836196,
+            "bias": 0.047700030361539233,
+            "peak_MAE": 0.3630781656193237,
+            "relative_improvement": -0.1188399905941685
+          }
+        ]
+      }
+    }
+  },
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "matplotlib": "3.11.2"
+  }
+}

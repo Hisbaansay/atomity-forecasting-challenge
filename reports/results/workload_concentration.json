@@ -1,0 +1,16 @@
+{
+  "scope": "CPU readings at explicitly supplied training timestamps only",
+  "vm_count": 10000,
+  "training_timestamp_count": 110,
+  "high_threshold_pct": 80,
+  "high_readings": 13993,
+  "vms_ever_high": 437,
+  "vms_high_at_least_half": 114,
+  "vms_training_mean_ge80": 99,
+  "top_group_fraction": 0.01,
+  "top_group_vm_count": 100,
+  "top_group_high_readings": 10021,
+  "top_group_share_of_high_readings": 0.7161437861788037,
+  "mean_vm_temporal_std_pp": 2.9725351384268426,
+  "top_group_note": "Retrospective count ranking; descriptive concentration, not incident prediction"
+}

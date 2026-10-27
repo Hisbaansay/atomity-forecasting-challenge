@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "perturbation": "extreme_finite",
+      "changed_rows": 24,
+      "targets": [
+        "active_vm_count",
+        "aggregate_cpu_utilization"
+      ],
+      "predictions_exactly_equal": true,
+      "selection_exactly_equal": true,
+      "backtests_exactly_equal": true
+    },
+    {
+      "perturbation": "all_nan",
+      "changed_rows": 24,
+      "targets": [
+        "active_vm_count",
+        "aggregate_cpu_utilization"
+      ],
+      "predictions_exactly_equal": true,
+      "selection_exactly_equal": true,
+      "backtests_exactly_equal": true
+    }
+  ],
+  "holdout_scored": false,
+  "holdout_labels_exported": false
+}
