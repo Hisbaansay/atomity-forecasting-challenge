@@ -33,7 +33,17 @@ The notebook constructs targets, freezes selection, generates training-only anal
 | Reviewer smoke data | Three-VM CLI test with configurable training size and horizon |
 | Packaging | Required-file checks, ZIP integrity checks, and exclusions tested |
 
-The current suite passes **148 tests** (workspace: 7.02s; fresh extracted archive: 6.79s). This includes checks for font discovery, embedded Times fonts, justified paragraph spacing, executable chart definitions matching the package functions, repeatable exports without duplicate legends, and nonoverlapping layouts. The notebook executes all **22 code cells** and generates **12 figures** without errors. Every chart is drawn by an ordinary executable code cell, not a formatted source-code output. The PDF embeds Times New Roman regular/bold and uses justified body text.
+The current suite passes **152 tests** (workspace: 8.85s). Before the four additional reviewer-smoke tests, fresh extracted-archive reproduction passed 148 tests in 6.79s. The notebook executes all **22 code cells** and generates **12 figures** without errors. Tests cover numerical correctness, leakage, executable chart definitions, typography, nonoverlapping layouts, and size-independent CLI execution. The PDF embeds Times New Roman regular/bold and uses justified body text.
+
+## Clean GitHub Checkout And Reviewer Smoke Inputs
+
+The public repository was cloned into a separate temporary directory and installed into a newly created virtual environment using the documented constrained installation. Import-path inspection confirmed that the prediction module came from that clone, not the working project. The four new subprocess tests passed against that published code (**4 passed in 9.81s**), without downloading or reading the official Azure CSVs:
+
+- Default 110/24 prediction command with **1, 3, and 5 VMs**, 134 timestamps, shifted trace-relative times, and different CPU values.
+- A **three-VM, 16-timestamp** series with `--train-size 12 --horizon 4`.
+- For each default-split input, perturbing only the final synthetic CPU values preserves forecast CSV bytes and selection metadata.
+
+Each CLI subprocess runs from its temporary input directory with `PYTHONPATH` removed. Input-specific checksums are verified where provided; a checksum-free synthetic input is accepted with an explicit warning. Replacing raw files while retaining the public release's old checksum manifest correctly fails integrity verification. A shorter series requires explicit split/horizon settings; the protocol is never inferred from its target values. These synthetic inputs exercise execution only and do not affect the submission forecasts or validation scores.
 
 The plotting cleanup moved chart implementations out of the analysis orchestrator and removed three duplicate notebook implementations. All figure creation now lives in `plotting.py`; it accepts computed data and returns Figure objects, while `save_figure` handles layout/export. Analysis returns its calculated DataFrames, JSON-ready summaries, and live Figure objects. The notebook uses those objects directly, without reading report CSV/JSON/PNG exports. Tables set dark text and light backgrounds explicitly to avoid theme-dependent low contrast. No model, split, threshold, target definition, or statistical calculation changed.
 

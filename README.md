@@ -119,6 +119,16 @@ The prediction CLI also supports synthetic smoke inputs:
 
 This needs 16 timestamps total; horizon 4 requires at least 9 training rows. Preserve schema, filenames, five-minute cadence, and unique matching metadata IDs. Synthetic inputs may omit the manifest with an explicit warning. Full analysis requires the official 110/24 layout.
 
+For reviewer smoke inputs, the default prediction command needs **134 timestamps**, not 10,000 VMs. It is tested with **1, 3, and 5 VMs**, different CPU values, and shifted trace-relative timestamps. Shorter series use the explicit split/horizon flags above; the split is never guessed silently. Synthetic data should be supplied in its own directory, without the public release's checksum manifest, or with a manifest generated for those input files. A stale public manifest must fail integrity verification rather than be bypassed. Only prediction is size-configurable; the full release-specific notebook/report analysis intentionally uses 110/24.
+
+Run just these public-command smoke checks without downloading Azure data:
+
+```bash
+.venv/bin/python -m pytest tests/test_reviewer_smoke.py -q
+```
+
+These checks invoke the CLI as a subprocess from outside the repository, remove `PYTHONPATH`, verify output timestamps/ranges, and perturb only future synthetic CPU labels to confirm identical forecasts and selection.
+
 ## Method And Findings
 
 Validate finite CPU percentages with `0 <= min_cpu <= avg_cpu <= max_cpu <= 100`; exclude invalid records with warnings. Average valid duplicate VM/timestamp rows before cross-VM aggregation. Missing readings contribute neither count nor CPU; whole-timestamp gaps fail rather than being imputed. `active_vm_count` counts valid represented VMs, and aggregate CPU weights each VM's `avg_cpu` equally, not by cores.
